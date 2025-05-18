@@ -104,17 +104,17 @@ export function ArticlesDashboard() {
   ])
 
   return (
-    <div className="flex flex-col h-full px-4 sm:px-6 max-w-screen-xl mx-auto">
-      <header className="flex flex-wrap items-center justify-between p-4 sm:p-6 border-b gap-2">
+    <div className="flex flex-col h-full px-2 sm:px-4 md:px-6 max-w-screen-xl mx-auto">
+      <header className="flex items-center justify-between p-2 sm:p-4 md:p-6 border-b gap-2">
         <div className="flex items-center gap-2">
           <SidebarTrigger />
-          <h1 className="text-2xl font-bold">Articles</h1>
+          <h1 className="text-xl sm:text-2xl font-bold">Articles</h1>
         </div>
       </header>
 
-      <main className="flex-1 py-6">
+      <main className="flex-1 py-4 sm:py-6">
         <Tabs defaultValue="generated">
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center mb-4 sm:mb-6">
             <TabsList className="grid grid-cols-2 sm:grid-cols-4 w-full max-w-[600px] mx-auto">
               <TabsTrigger value="generated">Generated Articles</TabsTrigger>
               <TabsTrigger value="published">Published Articles</TabsTrigger>
@@ -123,12 +123,12 @@ export function ArticlesDashboard() {
             </TabsList>
           </div>
 
-          <div className="mb-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+          <div className="mb-4 sm:mb-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 sm:gap-4">
             <div className="relative w-full max-w-sm">
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input type="search" placeholder="Search for Title & Keywords..." className="pl-8 w-full" />
             </div>
-            <Button variant="outline" size="sm" className="w-full sm:w-auto">
+            <Button variant="outline" size="sm" className="w-full sm:w-auto flex-shrink-0">
               <Plus className="mr-2 h-4 w-4" />
               Add Article
             </Button>
@@ -136,7 +136,7 @@ export function ArticlesDashboard() {
 
           <TabsContent value="generated" className="m-0">
             <div className="rounded-md border overflow-x-auto">
-              <Table className="min-w-[800px]">
+              <Table className="min-w-[700px]">
                 <TableHeader>
                   <TableRow>
                     <TableHead className="w-[30px]">
@@ -199,9 +199,9 @@ export function ArticlesDashboard() {
               </Table>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-between mt-4 gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-between mt-4 gap-2 sm:gap-4">
               <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-sm">Total 9 Article Titles</span>
+                <span className="text-sm">Total {articles.length} Article Titles</span>
                 <div className="flex items-center gap-2">
                   <span className="text-sm">Show</span>
                   <select className="h-8 rounded-md border border-input px-2 py-1 text-sm">
