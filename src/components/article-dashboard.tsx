@@ -104,17 +104,18 @@ export function ArticlesDashboard() {
   ])
 
   return (
-    <div className="flex flex-col h-full">
-      <header className="flex items-center justify-between p-6 border-b">
+    <div className="flex flex-col h-full px-4 sm:px-6 max-w-screen-xl mx-auto">
+      <header className="flex flex-wrap items-center justify-between p-4 sm:p-6 border-b gap-2">
         <div className="flex items-center gap-2">
           <SidebarTrigger />
           <h1 className="text-2xl font-bold">Articles</h1>
         </div>
       </header>
-      <main className="flex-1 p-6">
+
+      <main className="flex-1 py-6">
         <Tabs defaultValue="generated">
           <div className="flex justify-center mb-6">
-            <TabsList className="grid grid-cols-4 w-[600px]">
+            <TabsList className="grid grid-cols-2 sm:grid-cols-4 w-full max-w-[600px] mx-auto">
               <TabsTrigger value="generated">Generated Articles</TabsTrigger>
               <TabsTrigger value="published">Published Articles</TabsTrigger>
               <TabsTrigger value="scheduled">Scheduled Articles</TabsTrigger>
@@ -122,20 +123,20 @@ export function ArticlesDashboard() {
             </TabsList>
           </div>
 
-          <div className="mb-6 flex items-center justify-between">
+          <div className="mb-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
             <div className="relative w-full max-w-sm">
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input type="search" placeholder="Search for Title & Keywords..." className="pl-8 w-full" />
             </div>
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" className="w-full sm:w-auto">
               <Plus className="mr-2 h-4 w-4" />
               Add Article
             </Button>
           </div>
 
           <TabsContent value="generated" className="m-0">
-            <div className="rounded-md border">
-              <Table>
+            <div className="rounded-md border overflow-x-auto">
+              <Table className="min-w-[800px]">
                 <TableHeader>
                   <TableRow>
                     <TableHead className="w-[30px]">
@@ -197,8 +198,9 @@ export function ArticlesDashboard() {
                 </TableBody>
               </Table>
             </div>
-            <div className="flex items-center justify-between mt-4">
-              <div className="flex items-center gap-2">
+
+            <div className="flex flex-col sm:flex-row items-center justify-between mt-4 gap-4">
+              <div className="flex items-center gap-2 flex-wrap">
                 <span className="text-sm">Total 9 Article Titles</span>
                 <div className="flex items-center gap-2">
                   <span className="text-sm">Show</span>
